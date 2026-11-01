@@ -7,8 +7,9 @@
 <script src="<?php echo base_url(); ?>public/js/ui-grid.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script>var base_url = <?php echo json_encode(base_url()); ?>;</script>
 
-<script src="<?php echo base_url();?>public/js/admin/routes.js"></script>
+<script src="<?php echo base_url();?>public/js/admin/routes.js?v=<?php echo filemtime(FCPATH . 'public/js/admin/routes.js'); ?>"></script>
 <script src="<?php echo base_url();?>public/js/admin/services.js"></script>
 <script src="<?php echo base_url();?>public/js/admin/open-science-app.js"></script>
 <script src="<?php echo base_url();?>public/js/admin/open-science-directives.js"></script>

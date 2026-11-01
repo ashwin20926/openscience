@@ -118,7 +118,7 @@
                                                              }
                                                              if($b['archive_fulltext'] && $b['article_link']) {
                                                                  echo '<div class="btn-wrapper">
-                                                                        <p class="full_text_para"><a href="http://www.opensciencepublications.com/fulltextarticles/'.$b['archive_fulltext'].'" target="_blank" class="icon-fulltext">Full Text</a></p>
+                                                                        <p class="full_text_para"><a href="'.base_url('fulltextarticles/'.$b['archive_fulltext']).'" target="_blank" class="icon-fulltext">Full Text</a></p>
                                                                         
                                                                         <p class="pdf_para"><a href="'.$b['article_link'].'" target="_blank" class="icon-pdf"> PDF</a> </p>
                                                                     </div>';                                                                

@@ -18,19 +18,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url(); ?>fav-icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>fav-icons/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url(); ?>fav-icons/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="<?php echo base_url(); ?>fav-icons/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="<?php echo base_url(); ?>fav-icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 	<!-- Stylesheets ============================================= -->
 	<!-- <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" /> -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/style.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/swiper.css" type="text/css" />
-
-	<!-- Construction Demo Specific Stylesheet -->	
-	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/construction.css" type="text/css" />
-	
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/font-icons.css" type="text/css" />
@@ -123,7 +119,7 @@
 						<li><a target="_blank" href="https://twitter.com/opensciencepubl">
 							<img src="<?php echo base_url(); ?>public/images/twitter_icon.png" alt="Twitter" /></a>
 						</li>
-						<li><a target="_blank" href="http://www.opensciencepublications.com/feed/">
+						<li><a target="_blank" href="<?php echo base_url('feed/'); ?>">
 							<img src="<?php echo base_url(); ?>public/images/rss_icon.png" alt="Rss" /></a>
 						</li>
 						<li><a target="_blank" href="#">

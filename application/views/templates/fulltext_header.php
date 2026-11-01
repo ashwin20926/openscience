@@ -173,7 +173,7 @@ echo "<meta name='keywords' content='".$title."'/>";
 						<li><a target="_blank" href="https://twitter.com/opensciencepubl">
 							<img src="<?php echo base_url(); ?>public/images/twitter_icon.png" alt="Twitter" /></a>
 						</li>
-						<li><a target="_blank" href="http://www.opensciencepublications.com/feed/">
+						<li><a target="_blank" href="<?php echo base_url('feed/'); ?>">
 							<img src="<?php echo base_url(); ?>public/images/rss_icon.png" alt="Rss" /></a>
 						</li>
 						<li><a target="_blank" href="#">

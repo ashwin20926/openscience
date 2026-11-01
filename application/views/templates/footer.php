@@ -14,7 +14,7 @@
 
 						 
 
-							<div class="clearfix" style="padding: 10px 0; background: url('images/world-map.png') no-repeat center center;">
+							<div class="clearfix" style="padding: 10px 0;">
 								<div class="col_two_fifth" style="margin-right:120px;">
 									<address class="nobottommargin">
 										<abbr title="Address" style="display: inline-block;margin-bottom: 7px;"><strong> Contact :</strong></abbr><br>
@@ -81,9 +81,9 @@ EZB<br>
 								<h4> Company </h4>
 
 								<ul class="footer-page-link">
-									<li><a href="http://opensciencepublications.com/about_us"> About Us </a></li>
-									<li><a href="http://opensciencepublications.com/policies"> Policies </a></li>
-									<li><a href="http://opensciencepublications.com/membership"> Membership </a></li>
+									<li><a href="<?php echo base_url('about_us'); ?>"> About Us </a></li>
+									<li><a href="<?php echo base_url('policies'); ?>"> Policies </a></li>
+									<li><a href="<?php echo base_url('membership'); ?>"> Membership </a></li>
 									 
 								</ul>
 

@@ -824,9 +824,9 @@ public function getUploadedFiles() {
         }
         
         if($_GET['type'] == "1") {
-             $data['upload_data']['full_path'] = 'http://www.opensciencepublications.com/wp-content/uploads/'.$data['upload_data']['file_name'].'';
+			 $data['upload_data']['full_path'] = base_url('wp-content/uploads/'.$data['upload_data']['file_name']);
         } elseif($_GET['type'] == "2") {
-            $data['upload_data']['full_path'] = 'http://www.opensciencepublications.com/fulltextarticles/images/'.$data['upload_data']['file_name'].'';
+			$data['upload_data']['full_path'] = base_url('fulltextarticles/images/'.$data['upload_data']['file_name']);
         }
         
         $this->_save_uploaded_to_db($data);
