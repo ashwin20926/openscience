@@ -774,6 +774,12 @@ public function update_fulltext_article() {
 			echo json_encode($data);
 		}
 	}
+public function get_fulltext_article_for_edit() {
+	$this->load->model('Admin_model');
+	$id = $this->input->get('id');
+	$data = $this->Admin_model->get_FulltextArticle($id);
+	echo json_encode($data);
+}
 public function get_FulltextArticle() {
 		$this->load->model('Admin_model');
 		$id = $this->input->get('id');				

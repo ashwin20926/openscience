@@ -194,15 +194,15 @@ class Admin_model extends CI_Model {
 		return $query->result_array();
 	}
 	function insert_journal($data) {		
-   		$journal_url_slug = array_key_exists('journal_url_slug', $data)?$data->journal_url_slug:"";
-   		$journal_name = array_key_exists('journal_name', $data)?$data->journal_name:"";
-   		$issn_number = array_key_exists('issn_number', $data)?$data->issn_number:"";
-   		$journal_meta_keywords = array_key_exists('journal_meta_keywords', $data)?$data->journal_meta_keywords:"";
-   		$journal_description = array_key_exists('journal_description', $data)?$data->journal_description:"";
-   		$banner_image = array_key_exists('banner_image', $data)?$data->banner_image:"";
-   		$sidebar_image = array_key_exists('sidebar_image', $data)?$data->sidebar_image:"";
-   		$journal_indexed_desc = array_key_exists('journal_indexed_desc', $data)?$data->journal_indexed_desc:"";
-   		$journal_image = array_key_exists('journal_image', $data)?$data->journal_image:"";
+   		$journal_url_slug = property_exists($data, 'journal_url_slug')?$data->journal_url_slug:"";
+   		$journal_name = property_exists($data, 'journal_name')?$data->journal_name:"";
+   		$issn_number = property_exists($data, 'issn_number')?$data->issn_number:"";
+   		$journal_meta_keywords = property_exists($data, 'journal_meta_keywords')?$data->journal_meta_keywords:"";
+   		$journal_description = property_exists($data, 'journal_description')?$data->journal_description:"";
+   		$banner_image = property_exists($data, 'banner_image')?$data->banner_image:"";
+   		$sidebar_image = property_exists($data, 'sidebar_image')?$data->sidebar_image:"";
+   		$journal_indexed_desc = property_exists($data, 'journal_indexed_desc')?$data->journal_indexed_desc:"";
+   		$journal_image = property_exists($data, 'journal_image')?$data->journal_image:"";
 
 		if($data->id) {
 		$query = $this->db->query("UPDATE wp_journals SET journal_url_slug='".$journal_url_slug."',journal_name='".$journal_name."', updated_date ='".date('Y-m-d')."',issn_number ='".$issn_number."',journal_meta_keywords ='".$journal_meta_keywords."',journal_description ='".$journal_description."', banner_image ='".$banner_image."',sidebar_image ='".$sidebar_image."',journal_indexed_desc ='".$journal_indexed_desc."',journal_image ='".$journal_image."' WHERE id=$data->id");
@@ -442,15 +442,15 @@ function update_fulltext_article($data) {
 		return $result;		
 	}
 function get_FulltextArticle($sid) {		
-		$query = $this->db->query("SELECT ID,post_title, post_browser_title,post_meta_keywords,post_content,post_date,journal_id,category_id FROM  wp_fulltextarticles WHERE id ='".$sid."' ");	
+	$query = $this->db->query("SELECT ID,volume,issue,season,special_issue,suplementary_issue,issue_qa,submitted_date,accepted_date,published_date,first_page,last_page,authors,post_title,post_browser_title_slug,post_browser_title,post_meta_keywords,post_content,post_date,journal_id,json_format FROM wp_fulltextarticles WHERE ID ='".$sid."' ");	
 		//print_r($query);				
 		return $query->result_array();
 	}
 function get_fulltext_articles($search_str) {
 	if($search_str) {
-		$query = $this->db->query('SELECT ID,volume,issue,season,special_issue,suplementary_issue,issue_qa,submitted_date,accepted_date,published_date,first_page,last_page,post_title,post_browser_title_slug,post_date,post_content,post_meta_keywords,post_browser_title,post_modified,journal_id,json_format FROM `wp_fulltextarticles` WHERE post_type = "post" AND deleted= "1" AND post_title LIKE "%'.$search_str.'%" ORDER BY post_title ASC');				
+		$query = $this->db->query('SELECT ID,volume,issue,season,special_issue,suplementary_issue,issue_qa,submitted_date,accepted_date,published_date,first_page,last_page,post_title,post_browser_title_slug,post_date,SUBSTRING(post_content, 1, 200) AS post_content,post_meta_keywords,post_browser_title,post_modified,journal_id,json_format FROM `wp_fulltextarticles` WHERE post_type = "post" AND deleted= "1" AND post_title LIKE "%'.$search_str.'%" ORDER BY post_title ASC');				
 	} else {
-		$query = $this->db->query("SELECT ID,volume,issue,season,special_issue,suplementary_issue,issue_qa,submitted_date,accepted_date,published_date,first_page,last_page,post_title,post_browser_title_slug, post_date,post_content,post_meta_keywords,post_browser_title,post_modified,journal_id,json_format FROM `wp_fulltextarticles` WHERE post_type = 'post' AND deleted= '1' ORDER BY post_title Asc");
+		$query = $this->db->query("SELECT ID,volume,issue,season,special_issue,suplementary_issue,issue_qa,submitted_date,accepted_date,published_date,first_page,last_page,post_title,post_browser_title_slug, post_date,SUBSTRING(post_content, 1, 200) AS post_content,post_meta_keywords,post_browser_title,post_modified,journal_id,json_format FROM `wp_fulltextarticles` WHERE post_type = 'post' AND deleted= '1' ORDER BY post_title Asc");
 	}
 	return $query->result_array();
 }
@@ -515,4 +515,3 @@ function setUserReadStatus($data) {
 	return $count->result_array();
 }
 }
-

@@ -102,6 +102,7 @@ $route['deleteEnquiry'] = 'admin/deleteEnquiry';
 
 
 $route['get_fulltext_articles'] = 'admin/get_fulltext_articles';
+$route['get_fulltext_article_for_edit'] = 'admin/get_fulltext_article_for_edit';
 $route['update_fulltext_article'] = 'admin/update_fulltext_article';
 $route['deleteFulltextarticle'] = 'admin/deleteFulltextarticle';
 $route['getUploadedFiles'] = 'admin/getUploadedFiles';
